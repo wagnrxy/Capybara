@@ -7,13 +7,15 @@ namespace Capybara;
 public class Main : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
+    private SpriteBatch _sb;
     private Menu _menu;
+    private enum gameState { Menu, Playing }
+    private gameState currentGameStates = gameState.Menu;
 
     public Main()
     {
         _graphics = new GraphicsDeviceManager(this);
-        Content.RootDirectory = "Contentq";
+        Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
 
@@ -26,27 +28,48 @@ public class Main : Game
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _menu = new Menu();
+        _sb = new SpriteBatch(GraphicsDevice);
+        _menu = new Menu(Content, _sb);
 
     }
 
-    protected override void Update(GameTime gameTime)
+    protected override void Update(GameTime gt)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
+        switch (currentGameStates)
+        {
+            case gameState.Menu:
 
-        base.Update(gameTime);
+                break;
+
+            case gameState.Playing:
+
+                break;
+        }
+
+        base.Update(gt);
     }
 
-    protected override void Draw(GameTime gameTime)
+
+    protected override void Draw(GameTime gt)
     {
         GraphicsDevice.Clear(Color.Black);
-        _spriteBatch.Begin();
+        _sb.Begin();
 
-        _spriteBatch.End();
+        switch (currentGameStates)
+        {
+            case gameState.Menu:
+            _menu.Draw(gt);
+                break;
 
-        base.Draw(gameTime);
+            case gameState.Playing:
+
+                break;
+        }
+        _sb.End();
+
+        base.Draw(gt);
     }
 }

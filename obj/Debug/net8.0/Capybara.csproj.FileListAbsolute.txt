@@ -23,3 +23,5 @@
 /home/wagnxy/git/Capybara/Capybara/obj/Debug/net8.0/Capybara.pdb
 /home/wagnxy/git/Capybara/Capybara/obj/Debug/net8.0/Capybara.genruntimeconfig.cache
 /home/wagnxy/git/Capybara/Capybara/obj/Debug/net8.0/ref/Capybara.dll
+/home/wagnxy/git/Capybara/Capybara/bin/Debug/net8.0/Content/assents/fonts/fontPixel.xnb
+/home/wagnxy/git/Capybara/Capybara/obj/Debug/net8.0/Capybara.sourcelink.json
