@@ -35,7 +35,7 @@ public class Main : Game
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
-        
+
 
         base.Update(gameTime);
     }
@@ -44,7 +44,7 @@ public class Main : Game
     {
         GraphicsDevice.Clear(Color.Black);
         _spriteBatch.Begin();
-        
+
         _spriteBatch.End();
 
         base.Draw(gameTime);
