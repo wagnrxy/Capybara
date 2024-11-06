@@ -6,13 +6,13 @@ namespace Capybara;
 
 public class Menu
 {
-    private SpriteFont _font;
     private SpriteBatch _sb;
+    private FontManager _font;
 
     public Menu(ContentManager c, SpriteBatch sb)
     {
-        _font = c.Load<SpriteFont>("assents/fonts/fontPixel");
         _sb = sb;
+        _font = new FontManager(c);
     }
     public void Update(GameTime gt)
     {
@@ -21,6 +21,6 @@ public class Menu
 
     public void Draw(GameTime gt)
     {
-        _sb.DrawString(_font, "Hello world", new Vector2(100, 100), Color.White);
+        _font.Draw(_sb, "ai meu cu", new Vector2(100, 100), Color.White);
     }
 }
