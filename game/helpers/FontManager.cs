@@ -6,7 +6,6 @@ namespace Capybara;
 
 public class FontManager
 {
-    private SpriteBatch _sb;
     private SpriteFont _font;
 
     public FontManager(ContentManager c)
