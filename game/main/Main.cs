@@ -30,7 +30,6 @@ public class Main : Game
     {
         _sb = new SpriteBatch(GraphicsDevice);
         _menu = new Menu(Content, _sb);
-
     }
 
     protected override void Update(GameTime gt)
@@ -41,7 +40,7 @@ public class Main : Game
         switch (currentGameStates)
         {
             case gameState.Menu:
-
+                _menu.Update(gt);
                 break;
 
             case gameState.Playing:
@@ -61,7 +60,7 @@ public class Main : Game
         switch (currentGameStates)
         {
             case gameState.Menu:
-            _menu.Draw(gt);
+                _menu.Draw(gt);
                 break;
 
             case gameState.Playing:
